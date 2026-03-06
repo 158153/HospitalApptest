@@ -1,33 +1,17 @@
-import BottomInput from '../pages/ChatDetail/BottomInput'
+import { router } from '@kit.ArkUI'
 
 @Component
 struct Connect {
   build() {
     Column() {
-      // 标题栏
-      Row() {
-        Stack({ alignContent: Alignment.Start }) {
-          Text("智能问答")
-            .width("100%")
-            .textAlign(TextAlign.Center)
-            .fontSize(16)
-            .fontColor($r("app.color.text_primary"))
+      Text("我是智能问答页面内容")
+        .onClick(() => {
+          router.pushUrl({
+            url: "pages/ChatDetail/ChatPage",
+          })
+        })
 
-          Image($r("app.media.ic_public_arrow_left"))
-            .width(30)
-            .height(30)
-        }
-      }
-      .height(50)
-
-      // 聊天内容区
-      Blank()
-
-      // 底部输入框
-      BottomInput()
     }
-    .height('100%')
-    .width('100%')
   }
 }
 
