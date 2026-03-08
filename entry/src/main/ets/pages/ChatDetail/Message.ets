@@ -9,10 +9,9 @@ import { currentUser } from '../../models/users'
 @Component
 struct message {
   /**
-   * @Prop 装饰器：表示这是一个属性，可以从父组件传入
+   * @Prop 装饰器：表示这是一个属性，可以从父组件传入，从ChatPage这个页面传入
    * 当父组件的状态变化时，会自动更新这个组件
-   * currentMessage: 当前要显示的消息对象
-   * 默认值：创建一个空的消息对象，防止undefined错误
+   * currentMessage: 当前要显示的消息对象，默认值：创建一个空的消息对象，防止undefined错误
    */
   @Prop
   currentMessage: MessageInfoModel = new MessageInfoModel({} as MessageInfo)
@@ -30,8 +29,7 @@ struct message {
         Column() {
           // 消息文本内容
           Text(this.currentMessage.messageContent)
-          // 根据消息发送者是否当前用户，设置不同的背景色
-          // 自己发送：使用次主题色；对方发送：使用白色
+          // 根据消息发送者是否当前用户，设置不同的背景色，自己发送：使用次主题色；对方发送：使用白色
             .backgroundColor(currentUser.user_id === this.currentMessage.sendUser.user_id ?
               $r("app.color.second_primary") : $r("app.color.white"))
             .fontColor($r("app.color.text_primary"))

@@ -94,6 +94,7 @@ struct Index {
           }.tabBar(this.CommonTabBar(item))
         })
       }
+      .barBackgroundColor($r("app.color.tab_green"))
       .barPosition(BarPosition.End) // 设置标签栏位置在底部
       .animationDuration(300) // 设置标签切换动画时长300毫秒
     }

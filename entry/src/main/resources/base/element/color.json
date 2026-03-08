@@ -5,6 +5,10 @@
       "value": "#FFFFFF"
     },
     {
+      "name": "tab_green",
+      "value": "#FFDCF6DC"
+    },
+    {
       "name": "primary",
       "value": "#FF65B365"
     },
