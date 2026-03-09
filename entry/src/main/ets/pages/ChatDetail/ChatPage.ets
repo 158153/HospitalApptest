@@ -1,4 +1,5 @@
 //ai智能问答页面
+
 import { MessageInfo, MessageInfoModel } from '../../models/message'
 import { currentUser, UserInfo } from '../../models/users'
 import { router } from '@kit.ArkUI'
@@ -71,7 +72,7 @@ struct ChatDetail {
       connectUser: this.talker // 接收者为当前聊天对象
     } as MessageInfo)
     this.messageList.push(message) // 将新消息添加到消息列表末尾
-    this.getResponseMessage(content)
+    this.getResponseMessage(content) //调用机器人回复的方法
 
     // 添加数据
     //StoreClass.addChatMessage(this.talker.user_id, message)
@@ -85,14 +86,15 @@ struct ChatDetail {
   async getResponseMessage(content: string) {
     this.talkerInputIng = true
     try {
+      //1.这行代码是在调用机器人的API接口
       const res = await getMessageInfo(content)
-
+      // 2. 服务器返回数据后，解析响应内容
       let message = new MessageInfoModel({
         messageContent: res?.info?.text,
         sendUser: this.talker,
         connectUser: this.talker
       } as MessageInfo)
-
+      // 3. 将机器人回复的消息添加到界面显示
       this.messageList.push(message)
 
       // this.scroller.scrollEdge(Edge.Bottom)
@@ -107,8 +109,7 @@ struct ChatDetail {
   }
 
   /**
-   * 生命周期函数 - 组件即将显示时调用
-   * 在这里进行初始化操作，获取路由传递的参数
+   * 生命周期函数 - 组件即将显示时调用，在这里进行初始化操作，获取路由传递的参数
    */
   aboutToAppear(): void {
     this.talker = router.getParams() as UserInfo

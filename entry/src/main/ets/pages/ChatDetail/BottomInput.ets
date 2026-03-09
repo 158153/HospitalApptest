@@ -1,4 +1,5 @@
-//底部输入框
+////ai智能问答页面-底部输入框
+
 import { promptAction } from '@kit.ArkUI'
 
 @Component

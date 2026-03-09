@@ -1,3 +1,5 @@
+//ai智能问答页面-message消息发送组件
+
 import { MessageInfo, MessageInfoModel } from '../../models/message'
 import { currentUser } from '../../models/users'
 

@@ -1,14 +1,18 @@
 // 1. 封装http请求
 // 2. 封装api接口
 // 3. 发送消息的时候,调用Api接口, 将它返回的数据添加到messageList
+
+//封装http请求的步骤
+//0.引入axios
 import axios, { AxiosError, AxiosResponse, InternalAxiosRequestConfig } from '@ohos/axios';
 
+//1.创建axios的实例对象。service
 const service = axios.create({
-  baseURL: "https://api.ownthink.com", //接口地址
+  baseURL: "https://api.ownthink.com", //公共接口地址
   timeout: 10000
 })
 
-// 请求拦截器
+// 2.创建请求拦截器
 service.interceptors.request.use((config: InternalAxiosRequestConfig) => {
 
   return config;
@@ -18,7 +22,7 @@ service.interceptors.request.use((config: InternalAxiosRequestConfig) => {
 });
 
 
-// 响应拦截器
+// 3.创建响应拦截器
 service.interceptors.response.use((response: AxiosResponse) => {
   return response.data.data;
 }, (error: AxiosError) => {
@@ -26,7 +30,7 @@ service.interceptors.response.use((response: AxiosResponse) => {
   return Promise.reject(error);
 });
 
-// 自定义的请求
+// 4.封装自定义的请求
 export class Http {
   static get<T>(url: string, params?: object) {
     return service.get<null, T>(url, {
@@ -47,5 +51,6 @@ export class Http {
   }
 }
 
+//5.导出实例对象或者封装的自定义请求方法
 export default service
 
