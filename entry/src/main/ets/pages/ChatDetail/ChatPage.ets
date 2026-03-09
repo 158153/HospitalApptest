@@ -51,10 +51,10 @@ struct ChatDetail {
     }),
 
   ]
-  // 滚动条控件
-  // scroller: Scroller = new Scroller()
-  // 是否是正在输入的状态 false 已完成状态 true正在输入的状态
+  //滚动条控件
+  scroller: Scroller = new Scroller()
   @State
+  // 是否是正在输入的状态 false 已完成状态 true正在输入的状态
   talkerInputIng: boolean = false
 
   /** 从BottomInput。ets页面
@@ -78,7 +78,7 @@ struct ChatDetail {
     //StoreClass.addChatMessage(this.talker.user_id, message)
 
 
-    // this.scroller.scrollEdge(Edge.Bottom)
+    this.scroller.scrollEdge(Edge.Bottom) //发送完信息后滚动到底部
 
   }
 
@@ -97,7 +97,7 @@ struct ChatDetail {
       // 3. 将机器人回复的消息添加到界面显示
       this.messageList.push(message)
 
-      // this.scroller.scrollEdge(Edge.Bottom)
+      this.scroller.scrollEdge(Edge.Bottom) //机器人回复后滚动到底部
 
       this.talkerInputIng = false
 
@@ -139,7 +139,7 @@ struct ChatDetail {
 
       // ========== 聊天消息列表区域 ==========
       // 聊天内容区
-      List({ space: 20 }) {
+      List({ space: 20, scroller: this.scroller }) {
         ForEach(this.messageList, (item: MessageInfoModel) => {
           ListItem() {
             Message({
