@@ -6,6 +6,8 @@
  */
 // 导入提示弹窗API，用于按钮点击后的Toast提示
 import promptAction from '@ohos.promptAction';
+// 导入路由API，用于页面跳转
+import router from '@ohos.router';
 // 导入抽离的天气卡片组件（路径根据实际项目结构调整）
 import TopCard from '../pages/HomeDetail/TopCard';
 
@@ -63,7 +65,7 @@ struct Home {
   /**
    * 【@Builder装饰器】功能按钮行构建方法
    * 包含：报警预备按钮、任务处理按钮（水平Row布局）
-   * 按钮样式：差异化配色+图标+文字，点击触发Toast提示
+   * 按钮样式：差异化配色+图标+文字，点击触发Toast提示+页面跳转
    */
   @Builder
   FunctionButtonRow() {
@@ -95,8 +97,10 @@ struct Home {
         offsetX: 0, // 水平偏移
         offsetY: 1 // 垂直偏移
       })
-      .onClick(() => { // 点击事件：提示进入报警预备页面
-        promptAction.showToast({ message: '进入报警预备页面', duration: 1500 })
+      .onClick(() => { // 点击事件：跳转到健康监测页面
+        promptAction.showToast({ message: '进入健康监测页面', duration: 1500 });
+        // 页面跳转 - 请根据实际项目路径修改
+        this.navigateToPage('pages/HomeDetail/FeaturePage/WatchPage', '健康监测');
       })
 
       // 消息提醒按钮（蓝色系样式）
@@ -125,8 +129,10 @@ struct Home {
         offsetX: 0, // 水平偏移
         offsetY: 1 // 垂直偏移
       })
-      .onClick(() => { // 点击事件：提示进入任务处理页面
-        promptAction.showToast({ message: '进入任务处理页面', duration: 1500 })
+      .onClick(() => { // 点击事件：跳转到消息通知页面
+        promptAction.showToast({ message: '进入消息通知页面', duration: 1500 });
+        // 页面跳转 - 请根据实际项目路径修改
+        this.navigateToPage('pages/HomeDetail/FeaturePage/MessagePage', '消息通知');
       })
     }
     .width('100%') // 行布局宽度占满父容器
@@ -134,16 +140,17 @@ struct Home {
   }
 
   /**
-   * 【@Builder装饰器】健康工资台具第一组构建方法
+   * 【@Builder装饰器】健康工具第一组构建方法
    * 包含：待办事项、随访记录（2个工具项）
    */
   @Builder
   HealthToolsGroup1() {
     Row({ space: 10 }) { // 水平布局，工具项间距10vp
-      // 待办事项：专属图标 + 绿色系
-      this.HealthToolItem("待办事项", '#4CAF50', 'app.media.icon_home_hljl')
-      // 随访记录：专属图标 + 紫色系
-      this.HealthToolItem("随访记录", '#9C27B0', 'app.media.icon_home_hlrw')
+      // 待办事项：专属图标 + 绿色系 + 页面跳转
+      this.HealthToolItem("待办事项", '#4CAF50', 'app.media.icon_home_hljl', 'pages/HomeDetail/FeaturePage/TaskPage')
+      // 随访记录：专属图标 + 紫色系 + 页面跳转
+      this.HealthToolItem("随访记录", '#9C27B0', 'app.media.icon_home_hlrw',
+        'pages/HomeDetail/FeaturePage/FollowupPage')
     }
     // 给健康目标模块添加左右内边距+上下外边距，让内容与边框有距离
     .padding({ left: 15, right: 15 })
@@ -164,11 +171,12 @@ struct Home {
   HealthToolsGroup2() {
     Row({ space: 10 }) { // 水平布局，工具项间距10vp
       // 设备绑定：专属图标 + 蓝色系
-      this.HealthToolItem("设备绑定", '#03A9F4', 'app.media.icon_home_wdsb')
+      this.HealthToolItem("设备绑定", '#03A9F4', 'app.media.icon_home_wdsb', 'pages/HomeDetail/FeaturePage/SettingPage')
       // 电子病历：专属图标 + 黄色系
-      this.HealthToolItem("电子病历", '#FFC107', 'app.media.icon_home_sbkz')
+      this.HealthToolItem("电子病历", '#FFC107', 'app.media.icon_home_sbkz', 'pages/HomeDetail/FeaturePage/DigitalPage')
       // 健康评估：专属图标 + 红色系
-      this.HealthToolItem("健康评估", '#F44336', 'app.media.icon_home_sbaz')
+      this.HealthToolItem("健康评估", '#F44336', 'app.media.icon_home_sbaz',
+        'pages/HomeDetail/FeaturePage/EvaluationPage')
     }
     // 给健康工具模块添加左右内边距+上下外边距，统一间距风格
     .padding({ left: 15, right: 15 })
@@ -186,10 +194,11 @@ struct Home {
    * @param text 工具项文字（如：每日目标、我的设备）
    * @param iconColor 图标颜色（差异化区分不同工具）
    * @param iconPath 图标资源路径（新增参数，指定专属图标）
+   * @param pageUrl 跳转页面路径（为空则不跳转）
    * 功能：统一封装健康工具按钮样式，减少重复代码
    */
   @Builder
-  HealthToolItem(text: string, iconColor: string, iconPath: string) {
+  HealthToolItem(text: string, iconColor: string, iconPath: string, pageUrl: string = '') {
     Button() {
       // 按钮内部：图标+文字垂直排列，间距8vp
       Column({ space: 8 }) {
@@ -223,9 +232,30 @@ struct Home {
       offsetX: 0, // 水平偏移
       offsetY: 1 // 垂直偏移
     })
-    .onClick(() => { // 点击事件：提示点击的工具项名称
-      promptAction.showToast({ message: `点击了${text}`, duration: 1500 })
+    .onClick(() => { // 点击事件：提示点击的工具项名称 + 页面跳转
+      promptAction.showToast({ message: `进入${text}`, duration: 1500 });
+
+      // 如果传入了页面路径，则执行跳转
+      if (pageUrl && pageUrl.trim() !== '') {
+        this.navigateToPage(pageUrl, text);
+      }
     })
+  }
+
+  /**
+   * 通用页面跳转方法
+   * @param pageUrl 目标页面路径
+   * @param pageName 页面名称（用于错误提示）
+   */
+  private navigateToPage(pageUrl: string, pageName: string) {
+    router.pushUrl({
+      url: pageUrl
+    }).catch((err: Error) => {
+      promptAction.showToast({
+        message: `${pageName}页面跳转失败：${err.message}`,
+        duration: 2000
+      });
+    });
   }
 }
 

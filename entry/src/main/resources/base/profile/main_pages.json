@@ -1,6 +1,13 @@
 {
   "src": [
     "pages/Index",
-    "pages/ChatDetail/ChatPage"
+    "pages/ChatDetail/ChatPage",
+    "pages/HomeDetail/FeaturePage/WatchPage",
+    "pages/HomeDetail/FeaturePage/TaskPage",
+    "pages/HomeDetail/FeaturePage/FollowupPage",
+    "pages/HomeDetail/FeaturePage/SettingPage",
+    "pages/HomeDetail/FeaturePage/DigitalPage",
+    "pages/HomeDetail/FeaturePage/EvaluationPage",
+    "pages/HomeDetail/FeaturePage/MessagePage"
   ]
 }
