@@ -1,7 +1,7 @@
 //ai智能问答页面
 
-import { MessageInfo, MessageInfoModel } from '../../models/message'
-import { currentUser, UserInfo } from '../../models/users'
+import { MessageInfo, MessageInfoModel } from '../../models/AiQmodels/message'
+import { currentUser, UserInfo } from '../../models/AiQmodels/users'
 import { router } from '@kit.ArkUI'
 import BottomInput from './BottomInput'
 import Message from './Message'

@@ -1,6 +1,6 @@
-import { TabBarClass } from '../models/tab'
+import { TabBarClass } from '../models/AiQmodels/tab'
 import AIQ from './AIQ'
-
+import Home from './Home'
 
 @Entry
 @Component
@@ -83,7 +83,7 @@ struct Index {
         ForEach(this.tabBarList, (item: TabBarClass) => {
           TabContent() {
             if (item.name === "home") {
-              Text("首页")
+              Home()
             } else if (item.name === "aiquestion") {
               AIQ()
             } else if (item.name === "discover") {
@@ -103,3 +103,4 @@ struct Index {
 
   }
 }
+

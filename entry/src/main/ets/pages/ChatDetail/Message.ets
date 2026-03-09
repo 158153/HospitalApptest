@@ -1,7 +1,7 @@
 //ai智能问答页面-message消息发送组件
 
-import { MessageInfo, MessageInfoModel } from '../../models/message'
-import { currentUser } from '../../models/users'
+import { MessageInfo, MessageInfoModel } from '../../models/AiQmodels/message'
+import { currentUser } from '../../models/AiQmodels/users'
 
 
 /**

@@ -1,4 +1,4 @@
-import { DefaultUserList, UserInfo } from '../models/users'
+import { DefaultUserList, UserInfo } from '../models/AiQmodels/users'
 import { router } from '@kit.ArkUI'
 
 @Component
