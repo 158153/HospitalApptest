@@ -170,12 +170,12 @@ struct Home {
   @Builder
   HealthToolsGroup2() {
     Row({ space: 10 }) { // 水平布局，工具项间距10vp
-      // 设备绑定：专属图标 + 蓝色系
-      this.HealthToolItem("设备绑定", '#03A9F4', 'app.media.icon_home_wdsb', 'pages/HomeDetail/FeaturePage/SettingPage')
-      // 电子病历：专属图标 + 黄色系
-      this.HealthToolItem("电子病历", '#FFC107', 'app.media.icon_home_sbkz', 'pages/HomeDetail/FeaturePage/DigitalPage')
-      // 健康评估：专属图标 + 红色系
-      this.HealthToolItem("健康评估", '#F44336', 'app.media.icon_home_sbaz',
+      // 设备绑定：专属图标 + 色系
+      this.HealthToolItem("设备绑定", '', 'app.media.icon_home_wdsb', 'pages/HomeDetail/FeaturePage/SettingPage')
+      // 电子病历：专属图标 + 色系
+      this.HealthToolItem("电子病历", '', 'app.media.icon_home_sbkz', 'pages/HomeDetail/FeaturePage/DigitalPage')
+      // 健康评估：专属图标 + 色系
+      this.HealthToolItem("健康评估", '', 'app.media.icon_home_sbaz',
         'pages/HomeDetail/FeaturePage/EvaluationPage')
     }
     // 给健康工具模块添加左右内边距+上下外边距，统一间距风格
