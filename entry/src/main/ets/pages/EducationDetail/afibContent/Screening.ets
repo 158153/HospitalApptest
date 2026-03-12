@@ -1,0 +1,51 @@
+@Component
+struct Screening {
+  build() {
+    Column({ space: 16 }) {
+      Text("筛查篇")
+        .fontSize(20)
+        .fontWeight(FontWeight.Medium)
+        .fontColor('#333333')
+      Text("房颤的筛查方法主要包括以下几种：")
+        .fontSize(16)
+        .fontColor('#555555')
+        .lineHeight(24)
+      Text("1. 心电图（ECG）：这是诊断房颤最常用、最基本的方法。标准12导联心电图可以记录心脏的电活动，房颤表现为P波消失，代之以不规则的f波，RR间期绝对不规则。")
+        .fontSize(15)
+        .fontColor('#555555')
+        .lineHeight(24)
+      Text("2. 动态心电图（Holter）：对于阵发性房颤，常规心电图可能捕捉不到异常，需要进行24小时或更长时间的动态心电图监测。")
+        .fontSize(15)
+        .fontColor('#555555')
+        .lineHeight(24)
+      Text("3. 便携式心电监测设备：包括事件记录仪、植入式循环记录仪等，适用于发作频率低、持续时间短的房颤患者。")
+        .fontSize(15)
+        .fontColor('#555555')
+        .lineHeight(24)
+      Text("4. 心脏超声：可以评估心脏结构和功能，查找房颤的潜在病因，如心房扩大、瓣膜病、心肌病等。")
+        .fontSize(15)
+        .fontColor('#555555')
+        .lineHeight(24)
+      Text("5. 血液检查：包括甲状腺功能、电解质、肝肾功能等，排除甲状腺功能亢进等非心脏性病因。")
+        .fontSize(15)
+        .fontColor('#555555')
+        .lineHeight(24)
+      Text("6. 运动负荷试验：对于怀疑与运动相关的房颤，可进行运动负荷试验，观察运动过程中心律的变化。")
+        .fontSize(15)
+        .fontColor('#555555')
+        .lineHeight(24)
+      Text("7. 经食管超声心动图：用于评估左心耳血栓，为房颤复律或消融治疗做准备。")
+        .fontSize(15)
+        .fontColor('#555555')
+        .lineHeight(24)
+      Text("8. 房颤筛查的适用人群：\n- 年龄≥65岁的老年人\n- 高血压、糖尿病、冠心病、心力衰竭患者\n- 有卒中病史或家族史者\n- 肥胖、睡眠呼吸暂停综合征患者\n- 长期饮酒、吸烟人群")
+        .fontSize(15)
+        .fontColor('#555555')
+        .lineHeight(24)
+    }
+    .width('100%')
+    .padding(16)
+  }
+}
+
+export default Screening;

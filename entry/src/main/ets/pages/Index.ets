@@ -1,6 +1,7 @@
 import { TabBarClass } from '../models/AiQmodels/tab'
 import AIQ from './AIQ'
 import Home from './Home'
+import Education from './Education'
 
 @Entry
 @Component
@@ -87,7 +88,7 @@ struct Index {
             } else if (item.name === "aiquestion") {
               AIQ()
             } else if (item.name === "discover") {
-              Text("科普宣教")
+              Education()
             } else if (item.name === "my") {
               Text("我的")
             }
