@@ -1,7 +1,7 @@
 {
   "src": [
     "pages/Index",
-    "pages/ChatDetail/ChatPage",
+    "pages/AI_ChatDetail/ChatPage",
     "pages/HomeDetail/FeaturePage/WatchPage",
     "pages/HomeDetail/FeaturePage/TaskPage",
     "pages/HomeDetail/FeaturePage/FollowupPage",
