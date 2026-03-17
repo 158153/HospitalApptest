@@ -9,6 +9,9 @@
     "pages/HomeDetail/FeaturePage/DigitalPage",
     "pages/HomeDetail/FeaturePage/EvaluationPage",
     "pages/HomeDetail/FeaturePage/MessagePage",
-    "pages/HomeDetail/FeaturePage/EvaluationComponents/EvaluationInputPage"
+    "pages/HomeDetail/FeaturePage/EvaluationComponents/EvaluationInputPage",
+    "pages/HomeDetail/FeaturePage/FollowupComponents/FollowupDetailPage",
+    "pages/HomeDetail/FeaturePage/FollowupComponents/FollowupQuestionPage",
+    "pages/HomeDetail/FeaturePage/FollowupComponents/FollowupFormPage"
   ]
 }
