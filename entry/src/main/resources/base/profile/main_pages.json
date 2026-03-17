@@ -8,6 +8,7 @@
     "pages/HomeDetail/FeaturePage/SettingPage",
     "pages/HomeDetail/FeaturePage/DigitalPage",
     "pages/HomeDetail/FeaturePage/EvaluationPage",
-    "pages/HomeDetail/FeaturePage/MessagePage"
+    "pages/HomeDetail/FeaturePage/MessagePage",
+    "pages/HomeDetail/FeaturePage/EvaluationComponents/EvaluationInputPage"
   ]
 }
