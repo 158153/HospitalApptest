@@ -16,7 +16,7 @@ export struct BoundDeviceDataView {
         .fontSize(18)
         .fontWeight(FontWeight.Medium)
         .alignSelf(ItemAlign.Start)
-        .margin({ top: 20, left: 20 })
+        .margin({ top: 20, left: 19 })
 
       Row({ space: 20 }) {
         DeviceCard({

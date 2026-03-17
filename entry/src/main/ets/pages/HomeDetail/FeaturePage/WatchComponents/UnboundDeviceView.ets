@@ -11,7 +11,7 @@ export struct UnboundDeviceView {
         .fontSize(20)
         .fontWeight(FontWeight.Medium)
         .alignSelf(ItemAlign.Start)
-        .margin({ top: 20, left: 23 })
+        .margin({ top: 20, left: 20 })
 
       Column() {
         // 提示文本：未检测到设备
