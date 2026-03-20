@@ -23,32 +23,32 @@ struct ChatDetail {
    */
   @State
   messageList: MessageInfoModel[] = [
-    // 第1条消息：当前用户发送的问候
+    // 第1条消息：对方发送的问候
     new MessageInfoModel({
       id: "1", // 标识
       sendUser: {
         username: "刘浩",
-        avatar: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2Fbb560b27-a0b7-4062-ae40-efe4e5a8a748%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1708069619&t=8605f8477712cf9c5a1159db0cd7dab4",
+        avatar: $r('app.media.doctor'),
         user_id: "liu"
       }, // 这条消息的发送者
       sendTime: 1729666240777, // 发送时间
       sourceFilePath: "", // 音频地址 图片地址 视频地址
       sourceDuration: 0, // 音频或者视频的长度 单位s
       messageType: 0, // 0表示发送的消息是一个文本
-      messageContent: "您好，我是慢病健康小助手，有什么可以帮助你的吗",
+      messageContent: "您好，我是慢病健康小助手，有什么可以帮助你的吗~",
       connectUser: currentUser // 这条消息的归属者
     }),
-    // 第2条消息：对方用户"刘浩"的回复
-    new MessageInfoModel({
-      id: "2", // 标识
-      sendUser: currentUser, // 这条消息的发送者
-      sendTime: 1729666240777, // 发送时间
-      sourceFilePath: "", // 音频地址 图片地址 视频地址
-      sourceDuration: 0, // 音频或者视频的长度 单位s
-      messageType: 0, // 0表示发送的消息是一个文本
-      messageContent: "hello, 您好",
-      connectUser: currentUser // 这条消息的归属者
-    }),
+    // // 第2条消息：我的的回复
+    // new MessageInfoModel({
+    //   id: "2", // 标识
+    //   sendUser: currentUser, // 这条消息的发送者
+    //   sendTime: 1729666240777, // 发送时间
+    //   sourceFilePath: "", // 音频地址 图片地址 视频地址
+    //   sourceDuration: 0, // 音频或者视频的长度 单位s
+    //   messageType: 0, // 0表示发送的消息是一个文本
+    //   messageContent: "hello, 您好",
+    //   connectUser: currentUser // 这条消息的归属者
+    // }),
 
   ]
   //滚动条控件
