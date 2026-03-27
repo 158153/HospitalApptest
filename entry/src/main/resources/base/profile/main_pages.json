@@ -13,6 +13,12 @@
     "pages/HomeDetail/FeaturePage/FollowupComponents/FollowupDetailPage",
     "pages/HomeDetail/FeaturePage/FollowupComponents/FollowupQuestionPage",
     "pages/HomeDetail/FeaturePage/FollowupComponents/FollowupFormPage",
-    "pages/HomeDetail/FeaturePage/DigitalComponents/MedicalRecordDetailPage"
+    "pages/HomeDetail/FeaturePage/DigitalComponents/MedicalRecordDetailPage",
+    "pages/MyDetail/MyFollowPage",
+    "pages/MyDetail/MySettingPage",
+    "pages/MyDetail/MyFeedbackTypePage",
+    "pages/MyDetail/MyFeedbackSubmitPage",
+    "pages/MyDetail/MyAboutPage",
+    "pages/MyDetail/MyCollectPage"
   ]
 }

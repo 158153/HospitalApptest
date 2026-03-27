@@ -2,6 +2,7 @@ import { TabBarClass } from '../models/AiQmodels/tab'
 import AIQ from './AIQ'
 import Home from './Home'
 import Education from './Education'
+import MyPage from './My'
 
 @Entry
 @Component
@@ -90,7 +91,7 @@ struct Index {
             } else if (item.name === "discover") {
               Education()
             } else if (item.name === "my") {
-              Text("我的")
+              MyPage()
             }
           }.tabBar(this.CommonTabBar(item))
         })
